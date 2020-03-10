@@ -1,8 +1,3 @@
-interface Character {
-  calculateAttackDamage: () => number;
-  calculateMoveSpeed: () => number;
-}
-
 function calculateAttackDamage(character) {
   switch (character) {
     case "PHANTOM":

@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "start": "ts-node index.ts",
+    "test": "jest --watchAll"
+  },
+  "name": "k",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.1",
+    "@types/readline-sync": "^1.4.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

@@ -24,6 +24,7 @@ ${chalk.magentaBright(
   ${chalk.blueBright("quit")} ............... 프로그램 종료하기
 `
 };
+
 const kittyList = [];
 let targetKitty = {};
 
@@ -103,11 +104,6 @@ const decrementEveryKittesStatus = () => {
 };
 
 rl.on("line", function(line) {
-    // if (kittyList.length >= 1) {
-    //     kittyList.forEach(kitty => {
-    //         kitty.checkStatus();
-    //     });
-    // }
     const commandArray = line.split("-").map(command => command.trim());
     [mainCommand, target] = commandArray;
     switch (mainCommand) {
@@ -121,36 +117,45 @@ rl.on("line", function(line) {
             createKitty(target);
             console.log(`${target}를 데려왔습니다 🐱`);
             break;
+
         case "feed":
             decrementEveryKittesStatus();
             targetKitty = getTargetKitty(target);
             targetKitty.feed();
             break;
+
         case "sayHi":
             decrementEveryKittesStatus();
             targetKitty = getTargetKitty(target);
             targetKitty.sayHi();
             break;
+
         case "status":
             decrementEveryKittesStatus();
             showKitties();
             break;
+
         case "save":
-            saveData(JSON.stringify(kittyList));
+            saveData(JSON.stringify(kittyList, null, 2));
             break;
+
         case "load":
             loadData();
             break;
+
         case "help":
             decrementEveryKittesStatus();
             console.log(menus.main);
             break;
+
         case "quit":
-            console.log("안녕, 다음에 또 봐요.");
-            process.exit(0);
+            rl.close();
+            break;
+
         case "log":
             console.log(kittyList);
             break;
+
         default:
             console.log(
                 line +
@@ -158,10 +163,8 @@ rl.on("line", function(line) {
             );
             break;
     }
-    rl.prompt();
 }).on("close", function() {
     console.log("안녕, 다음에 또 봐요.");
-    process.exit(0);
 });
 
 console.log(

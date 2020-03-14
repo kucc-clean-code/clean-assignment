@@ -1,1 +1,12 @@
-[{"name":"든든한야옹이","hunger":26,"like":26},{"name":"안친한야옹이","hunger":-4,"like":-29}]
+[
+  {
+    "name": "냠",
+    "hunger": 1,
+    "like": 1
+  },
+  {
+    "name": "하하",
+    "hunger": 2,
+    "like": 2
+  }
+]

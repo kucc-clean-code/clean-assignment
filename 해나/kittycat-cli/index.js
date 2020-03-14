@@ -33,26 +33,21 @@ class Kitty {
             (this.hunger = hunger != undefined ? hunger : 3),
             (this.like = like != undefined ? like : 3);
     }
+
     feed() {
         this.hunger += 5;
         console.log(`${this.name}: 냠냠`);
     }
+
     sayHi() {
         this.like += 5;
         console.log(`${this.name}: 야옹!`);
     }
+
     decrementStatus() {
         this.hunger--;
         this.like--;
     }
-    // checkStatus() {
-    //     if (this.hunger < 0) {
-    //         console.log(`${this.name}가 배고파해요!`);
-    //     }
-    //     if (this.like < 0) {
-    //         console.log(`${this.name}가 심심해해요!`);
-    //     }
-    // }
 }
 
 const getTargetKitty = target => {
